@@ -32,7 +32,7 @@ const data : CalloutResponse = {
 }
 
 export const callout = async () : Promise<CalloutResponse> => {
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    await new Promise(resolve => setTimeout(resolve, 3000));
     return data;
 };
 

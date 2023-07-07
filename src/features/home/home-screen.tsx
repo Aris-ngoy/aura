@@ -1,4 +1,4 @@
-import { View } from 'react-native'
+import { Vibration, View } from 'react-native'
 import React, { FC, useCallback, useEffect, useRef, useState } from 'react'
 import { tailwind } from 'tailwind'
 import Mapbox, { Location } from '@rnmapbox/maps';
@@ -19,15 +19,13 @@ Mapbox.setAccessToken(MAPBOX_ACCESS_TOKEN);
 
 const HomeScreen : FC = () => {
 
-  const { isLoading, isFetching, data } = useCallout()
+  const { isSuccess, data } = useCallout()
 
   const bottomSheetModalRef = useRef<BottomSheet>(null);
   const mapRef = useRef<MapView>(null);
 
   const { location } =  useGeoLocation()
 
-  //generate randon id
-  const randomId = Math.floor(Math.random() * 1000) + 1;
 
   const geoData: IGetDirection = {
     from: {
@@ -67,7 +65,12 @@ const HomeScreen : FC = () => {
       })
     }
 
-  }, [location, data])
+    if(isSuccess){
+      //vibrate the device
+      Vibration.vibrate([1000, 2000, 3000], true)
+    }
+
+  }, [location, data, isSuccess])
   
   
   
@@ -83,7 +86,6 @@ const HomeScreen : FC = () => {
           longitudeDelta: 0.0421,
         }}
         style={tailwind.style('flex-1')}>
-          <NavControllter />
           {
             location && data &&
           <MapViewDirections 
@@ -111,6 +113,10 @@ const HomeScreen : FC = () => {
           </Marker>
         }
       </MapView>
+          {
+            data &&
+            <NavControllter />
+          }
           {
             data &&
             <CalloutItem ref={bottomSheetModalRef} item={data} />

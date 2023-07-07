@@ -1,6 +1,6 @@
 import { Text, View } from 'react-native'
 import React, { forwardRef, useMemo } from 'react'
-import BottomSheet, { BottomSheetModal, BottomSheetScrollView } from '@gorhom/bottom-sheet'
+import BottomSheet, { BottomSheetScrollView } from '@gorhom/bottom-sheet'
 import { CalloutResponse } from '@app/features/home/interface/ICallout';
 import { tailwind } from 'tailwind';
 import EvilIcons from '@expo/vector-icons/EvilIcons';
