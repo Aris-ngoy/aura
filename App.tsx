@@ -1,5 +1,4 @@
 import { useCallback } from 'react';
-import { View } from 'react-native';
 import * as SplashScreen from 'expo-splash-screen';
 import { useFonts, 
 Montserrat_100Thin, 
@@ -16,6 +15,8 @@ import { useOnlineManager } from '@app/hooks/useOnlineManager';
 import { MutationCache, QueryCache, QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import MainNavigation from '@app/navigation/main-navigation';
 import { useAppState } from '@app/hooks/useAppState';
+import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -67,13 +68,15 @@ export default function App() {
 
 
   return (
-    <View 
+    <GestureHandlerRootView 
       style={tailwind.style('flex-1')} 
       onLayout={onLayoutRootView}>
         <QueryClientProvider client={queryClient}>
-          <MainNavigation />
+          <BottomSheetModalProvider>
+            <MainNavigation />
+          </BottomSheetModalProvider>
         </QueryClientProvider>
-    </View>
+    </GestureHandlerRootView>
   );
 }
 

@@ -24,6 +24,7 @@ export interface Medical {
     allergies:         string;
     illnesses:         string;
     medications:       string;
+    [key: string]: any; 
 }
 
 export interface NextOfKin {

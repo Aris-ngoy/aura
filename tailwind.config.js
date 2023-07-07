@@ -9,9 +9,13 @@ module.exports = {
         tablet: '1024px',
       },
       fontFamily: {
-        RobotoCondensedLight: ['RobotoCondensed_300Light'],
-        RobotoCondensedRegular: ['RobotoCondensed_400Regular'],
-        RobotoCondensedBold : ['RobotoCondensed_700Bold'],
+        MontserratThin : ['Montserrat_100Thin'], 
+        MontserratLight : ['Montserrat_300Light'],
+        MontserratRegular : ['Montserrat_400Regular'],
+        MontserratMedium : ['Montserrat_500Medium'],
+        MontserratSemiBold : ['Montserrat_600SemiBold'],
+        MontserratBold : ['Montserrat_700Bold'],
+        MontserratExtraBold : ['Montserrat_800ExtraBold']
       },
       extend: {
         colors: {

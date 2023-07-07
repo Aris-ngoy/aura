@@ -18,7 +18,7 @@
       "supportsTablet": true,
       "bundleIdentifier": "service.aura.test",
       "config": {
-        "googleMapsApiKey": "AIzaSyBXNqtM1Cd_YSZSMn-XyaMyL_PeDTaKn6w"
+        "googleMapsApiKey": "AIzaSyBRrO0YBT_gMa2FLBq9kSmBDoGa2z-oTe4"
       }
     },
     "android": {
@@ -34,7 +34,7 @@
       "package": "service.aura.test",
       "config": {
         "googleMaps": {
-          "apiKey": "AIzaSyBXNqtM1Cd_YSZSMn-XyaMyL_PeDTaKn6w"
+          "apiKey": "AIzaSyBRrO0YBT_gMa2FLBq9kSmBDoGa2z-oTe4"
         }
       }
     },
